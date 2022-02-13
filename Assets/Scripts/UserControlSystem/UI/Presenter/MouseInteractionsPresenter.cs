@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class MouseInteractionsHandler : MonoBehaviour
+public class MouseInteractionsPresenter : MonoBehaviour
 {
     [SerializeField]
     private Camera _camera;

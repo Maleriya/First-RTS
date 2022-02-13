@@ -1,9 +1,8 @@
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
-using System;
 
-public class BottomLeftUI : MonoBehaviour
+public class BottomLeftPresenter : MonoBehaviour
 {
     [SerializeField] private Image _selectedImage;
     [SerializeField] private Slider _healthSlider;
