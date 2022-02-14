@@ -9,7 +9,9 @@ public class SelectableValue : ScriptableObject
 
     public void SetValue(ISelectable value)
     {
+        CurrentValue?.ExitOutline();
         CurrentValue = value;
+        CurrentValue?.EnterOutline();
         OnSelected?.Invoke(CurrentValue);
     }
 }

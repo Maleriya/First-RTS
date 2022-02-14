@@ -17,6 +17,7 @@ public class MainBuilding : MonoBehaviour, IUnitProducer, ISelectable
     [SerializeField]
     private Sprite _icon;
     private float _health;
+    private Material _material;
 
     public MainBuilding()
     {
@@ -24,8 +25,23 @@ public class MainBuilding : MonoBehaviour, IUnitProducer, ISelectable
         _health = _maxHealth;
     }
 
+    public void Start()
+    {
+        _material = GetComponentInChildren<Renderer>().material;
+    }
+
     public void ProduceUnit()
     {
         Instantiate(_unitPrefab, new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
+    }
+
+    public void EnterOutline()
+    {
+        _material?.SetFloat("_Outline", 0.02f);
+    }
+
+    public void ExitOutline()
+    {
+        _material?.SetFloat("_Outline", 0.0f);
     }
 }
