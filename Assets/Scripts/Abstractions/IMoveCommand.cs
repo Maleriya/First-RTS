@@ -2,5 +2,5 @@ using UnityEngine;
 
 public interface IMoveCommand : ICommand
 {
-    GameObject UnitPrefab { get; }
+	public Vector3 Target { get; }
 }

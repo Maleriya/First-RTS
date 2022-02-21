@@ -2,11 +2,10 @@
 
 public class MoveCommand : IMoveCommand
 {
-    public GameObject UnitPrefab => _unitPrefab;
-    private GameObject _unitPrefab;
+	public Vector3 Target { get; }
 
-    public MoveCommand(GameObject unitPrefab = null)
-    {
-        _unitPrefab = unitPrefab;
-    }
+	public MoveCommand(Vector3 target)
+	{
+		Target = target;
+	}
 }

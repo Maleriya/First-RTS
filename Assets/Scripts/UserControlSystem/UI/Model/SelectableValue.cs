@@ -5,6 +5,7 @@ using UnityEngine;
 public class SelectableValue : ScriptableObject
 {
     public ISelectable CurrentValue { get; private set; }
+
     public Action<ISelectable> OnSelected;
 
     public void SetValue(ISelectable value)
