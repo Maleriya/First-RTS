@@ -4,10 +4,11 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Chomper_Body_Mat
-  m_Shader: {fileID: 4800000, guid: df778dfc69de7fb48809501a413b8bbf, type: 3}
+  m_Shader: {fileID: 4800000, guid: bccd88bff4e45df40879df6bd913ebd0, type: 3}
   m_ShaderKeywords: _METALLICGLOSSMAP _NORMALMAP _SPECGLOSSMAP _USE_GRADIENT_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -111,6 +112,7 @@ Material:
     - _NoiseAmount: 0.4
     - _NoiseStrength: 0.087
     - _OcclusionStrength: 1
+    - _Outline: 0.02
     - _Parallax: 0.02
     - _RimPower: 0.3
     - _RimPower2: 0.31
@@ -134,6 +136,8 @@ Material:
     - _Emission: {r: 0, g: 1.3884, b: 3.441591, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.8278032, g: 0.8584906, b: 0.16602883, a: 1}
     - _RimColor: {r: 1, g: 1, b: 1, a: 0}
     - _SpecCol: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.1102941, g: 0.1102941, b: 0.1102941, a: 1}
+  m_BuildTextureStacks: []

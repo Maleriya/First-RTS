@@ -1,22 +1,21 @@
 using UnityEngine;
 
-public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectable
+public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable
 {
     public float Health => _health;
     public float MaxHealth => _maxHealth;
     public Sprite Icon => _icon;
 
-    [SerializeField] private Transform _unitsParent;  
+    [SerializeField] private Transform _unitsParent;
     [SerializeField] private float _maxHealth;
     [SerializeField] private Sprite _icon;
     private float _health;
     [SerializeField] private Material _material;
 
-    public MainBuilding()
+    public SoldierMain()
     {
-        _maxHealth = 1000;
+        _maxHealth = 500;
         _health = _maxHealth;
-        //_material = GetComponentInChildren<Renderer>().material;
     }
 
     public void EnterOutline()
@@ -29,8 +28,8 @@ public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectabl
         _material?.SetFloat("_Outline", 0.0f);
     }
 
-    public override void ExecuteSpecificCommand(IProduceUnitCommand command)
+    public override void ExecuteSpecificCommand(IAttackCommand command)
     {
-       Instantiate(command.UnitPrefab, new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10)), Quaternion.identity, _unitsParent);
+        Debug.Log("This is Attack command");
     }
 }
