@@ -1480,6 +1480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _legacyContext: {fileID: 11400000, guid: ad98ddc4b7a611647a1ad6fd97e0fab3, type: 2}
+  _groundClick: {fileID: 11400000, guid: d5fa874501feb6242a395d9c6c170eb9, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2676,10 +2677,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a417304ef68f34d820626151b44a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 963194227}
-  _selectableObject: {fileID: 11400000, guid: acda9a16b34fbd1458f4d45b4952a6e9, type: 2}
   _eventSystem: {fileID: 1680003783}
-  _groundClickRMB: {fileID: 11400000, guid: d5fa874501feb6242a395d9c6c170eb9, type: 2}
+  _camera: {fileID: 963194227}
+  _selectedObject: {fileID: 11400000, guid: acda9a16b34fbd1458f4d45b4952a6e9, type: 2}
+  _groundClicksRMB: {fileID: 11400000, guid: d5fa874501feb6242a395d9c6c170eb9, type: 2}
   _groundTransform: {fileID: 1406206882}
 --- !u!1001 &1535878302
 PrefabInstance:
