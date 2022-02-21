@@ -13,7 +13,7 @@ public class BottomLeftPresenter : MonoBehaviour
 
     private void Start()
     {
-        _selectedValue.OnSelected += onSelected;
+        _selectedValue.OnNewValue += onSelected;
         onSelected(_selectedValue.CurrentValue);
     }
 

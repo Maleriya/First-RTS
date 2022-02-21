@@ -18,7 +18,7 @@ public class CommandButtonsPresenter : MonoBehaviour
         _model.OnCommandCancel += _view.UnblockAllInteractions;
         _model.OnCommandAccepted += _view.BlockInteractions;
 
-        _selectable.OnSelected += onSelected;
+        _selectable.OnNewValue += onSelected;
         onSelected(_selectable.CurrentValue);
     }
 
