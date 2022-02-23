@@ -1,5 +1,5 @@
 using UnityEngine;
-public abstract class CommandExecutorBase<T> : MonoBehaviour, ICommandExecuter
+public abstract class CommandExecutorBase<T> : MonoBehaviour, ICommandExecutor
 {
 	public void ExecuteCommand(object command) => ExecuteSpecificCommand((T)command);
 

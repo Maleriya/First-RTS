@@ -1,12 +1,9 @@
-﻿using UnityEngine;
-
-public class AttackCommand : IAttackCommand
+﻿public class AttackCommand : IAttackCommand
 {
-    public GameObject UnitPrefab => _unitPrefab;
-    private GameObject _unitPrefab;
+    public IAttackable Target {get; }
 
-    public AttackCommand(GameObject unitPrefab = null)
+    public AttackCommand(IAttackable target)
     {
-        _unitPrefab = unitPrefab;
+        Target = target;
     }
 }

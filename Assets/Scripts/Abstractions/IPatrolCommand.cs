@@ -2,5 +2,6 @@ using UnityEngine;
 
 public interface IPatrolCommand : ICommand
 {
-    GameObject UnitPrefab { get; }
+    public Vector3 From { get; }
+    public Vector3 To { get; }
 }
