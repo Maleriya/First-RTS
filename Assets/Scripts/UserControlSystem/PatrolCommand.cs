@@ -2,11 +2,12 @@
 
 public class PatrolCommand : IPatrolCommand
 {
-    public GameObject UnitPrefab => _unitPrefab;
-    private GameObject _unitPrefab;
+    public Vector3 From { get; }
+    public Vector3 To { get; }
 
-    public PatrolCommand(GameObject unitPrefab = null)
+    public PatrolCommand(Vector3 from, Vector3 to)
     {
-        _unitPrefab = unitPrefab;
+        From = from;
+        To = to;
     }
 }

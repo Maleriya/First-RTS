@@ -1,7 +1,8 @@
 using UnityEngine;
 
-public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectable
+public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectable, IAttackable
 {
+    public Transform PivotPoint => _pivotPoint;
     public float Health => _health;
     public float MaxHealth => _maxHealth;
     public Sprite Icon => _icon;
@@ -10,13 +11,18 @@ public class MainBuilding : CommandExecutorBase<IProduceUnitCommand>, ISelectabl
     [SerializeField] private float _maxHealth;
     [SerializeField] private Sprite _icon;
     private float _health;
-    [SerializeField] private Material _material;
-
+    private Material _material;
+    private Transform _pivotPoint;
     public MainBuilding()
     {
         _maxHealth = 1000;
-        _health = _maxHealth;
-        //_material = GetComponentInChildren<Renderer>().material;
+        _health = _maxHealth;       
+    }
+
+    private void Awake()
+    {
+        _material = GetComponentInChildren<Renderer>().material;
+        _pivotPoint = transform;
     }
 
     public void EnterOutline()

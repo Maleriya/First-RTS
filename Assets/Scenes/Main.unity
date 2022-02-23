@@ -1481,6 +1481,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _legacyContext: {fileID: 11400000, guid: ad98ddc4b7a611647a1ad6fd97e0fab3, type: 2}
   _groundClick: {fileID: 11400000, guid: d5fa874501feb6242a395d9c6c170eb9, type: 2}
+  _attackableValue: {fileID: 11400000, guid: 36f3a2427031bdf4fbe1bd83c5d114bc, type: 2}
+  _selectableValue: {fileID: 11400000, guid: acda9a16b34fbd1458f4d45b4952a6e9, type: 2}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1725,13 +1727,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 897595066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af0c0c379f9648b408edff78ee938a41, type: 3}
+  m_Script: {fileID: 11500000, guid: 6813a08913102c94489c6a7c1f201783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _unitsParent: {fileID: 83834135}
   _maxHealth: 500
   _icon: {fileID: 21300000, guid: 2aef44103dbe8094eb7504c4b6000a86, type: 3}
-  _material: {fileID: 2100000, guid: dad26cc8af5eca141b973d06942e6efb, type: 2}
 --- !u!114 &897595069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1741,7 +1742,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 897595066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dacbbd9b36386547acf7dee199bdc2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 939a76aa4be55d641bbb71739f608cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &897595070
@@ -1753,7 +1754,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 897595066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a87dfe458b9bf5b47854763668cced3c, type: 3}
+  m_Script: {fileID: 11500000, guid: baf9bda9822543949ac6f4deb92ecb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &897595071
@@ -1765,7 +1766,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 897595066}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf87e8b31ef4fa24d9d44027de3926ea, type: 3}
+  m_Script: {fileID: 11500000, guid: ae1de9a132ac82e4f891f0cf74d608c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &926637042
@@ -2681,6 +2682,7 @@ MonoBehaviour:
   _camera: {fileID: 963194227}
   _selectedObject: {fileID: 11400000, guid: acda9a16b34fbd1458f4d45b4952a6e9, type: 2}
   _groundClicksRMB: {fileID: 11400000, guid: d5fa874501feb6242a395d9c6c170eb9, type: 2}
+  _attackablesRMB: {fileID: 11400000, guid: 36f3a2427031bdf4fbe1bd83c5d114bc, type: 2}
   _groundTransform: {fileID: 1406206882}
 --- !u!1001 &1535878302
 PrefabInstance:
@@ -3913,7 +3915,18 @@ MonoBehaviour:
   _unitsParent: {fileID: 83834135}
   _maxHealth: 1000
   _icon: {fileID: 21300000, guid: 3571b5cb52d270840b143054b624efe6, type: 3}
-  _material: {fileID: 2100000, guid: 619565ea3e5275b40b150c832fc06191, type: 2}
+--- !u!114 &1827190563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827190561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a4d5646b5edd2478fe4f68e3f02f40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1839307871
 GameObject:
   m_ObjectHideFlags: 0

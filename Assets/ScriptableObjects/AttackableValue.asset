@@ -9,8 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d18e33263789a16428ae9bd22d89896b, type: 3}
-  m_Name: AssetsContext
+  m_Script: {fileID: 11500000, guid: 22a7c9cb223629043ab0fdaf6436c3d3, type: 3}
+  m_Name: AttackableValue
   m_EditorClassIdentifier: 
-  _objects:
-  - {fileID: 100002, guid: 2732fe64dd2799f439fb845921df626b, type: 3}
