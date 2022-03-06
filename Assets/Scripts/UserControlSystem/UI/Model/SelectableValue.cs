@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = nameof(SelectableValue), menuName = "Strategy Game/" + nameof(SelectableValue), order = 0)]
-public class SelectableValue : BaseCustomValue<ISelectable>
+public class SelectableValue : ScriptableObjectValueBase<ISelectable>
 {
     public override void SetValue(ISelectable value)
     {
         CurrentValue?.ExitOutline();
-        CurrentValue = value;
+        base.SetValue(value);
         CurrentValue?.EnterOutline();
-        OnNewValue?.Invoke(CurrentValue);
     }
 }
 
