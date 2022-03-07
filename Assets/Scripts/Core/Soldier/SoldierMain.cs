@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable, IAttackable
@@ -36,7 +37,7 @@ public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable, IAt
         _material?.SetFloat("_Outline", 0.0f);
     }
 
-    public override void ExecuteSpecificCommand(IAttackCommand command)
+    public override async Task ExecuteSpecificCommand(IAttackCommand command)
     {
         Debug.Log($"This is Attack command to {command.Target}");
     }
