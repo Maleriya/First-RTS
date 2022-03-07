@@ -53,7 +53,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100002, guid: 2732fe64dd2799f439fb845921df626b, type: 3}
       propertyPath: m_Name
-      value: Chomper
+      value: Chomper Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 2732fe64dd2799f439fb845921df626b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 2732fe64dd2799f439fb845921df626b, type: 3}
       propertyPath: m_RootOrder
@@ -149,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stop: {fileID: 0}
   _animator: {fileID: 8658714521084279541}
+  _soldierStop: {fileID: 897595071}
 --- !u!114 &897595070
 MonoBehaviour:
   m_ObjectHideFlags: 0

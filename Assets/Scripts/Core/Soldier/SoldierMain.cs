@@ -23,6 +23,7 @@ public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable, IAt
     {
         _material = GetComponentInChildren<Renderer>().material;
         _pivotPoint = transform;
+        _unitsParent = _unitsParent ?? GetComponentInParent<Transform>();
     }
 
     public void EnterOutline()
