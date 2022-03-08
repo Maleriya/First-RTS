@@ -13,7 +13,8 @@ public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable, IAt
     [SerializeField] private Sprite _icon;
     private float _health;
     private Material _material;
-    private Transform _pivotPoint; 
+    private Transform _pivotPoint;
+    public IUnit _unit;
     public SoldierMain()
     {
         _maxHealth = 500;

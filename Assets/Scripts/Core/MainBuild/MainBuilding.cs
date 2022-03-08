@@ -8,6 +8,8 @@ public class MainBuilding : MonoBehaviour, ISelectable, IAttackable
     public float MaxHealth => _maxHealth;
     public Sprite Icon => _icon;
 
+    public Vector3 RallyPoint { get; set; }
+
     [SerializeField] private Transform _unitsParent;  
     [SerializeField] private float _maxHealth;
     [SerializeField] private Sprite _icon;

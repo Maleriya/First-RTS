@@ -13,22 +13,19 @@ public class CommandButtonsView : MonoBehaviour
 	[SerializeField] private GameObject _patrolButton;
 	[SerializeField] private GameObject _stopButton;
 	[SerializeField] private GameObject _produceUnitButton;
+	[SerializeField] private GameObject _setRallyPointButton;
 
 	private Dictionary<Type, GameObject> _buttonsByExecutorType;
 
 	private void Start()
 	{
 		_buttonsByExecutorType = new Dictionary<Type, GameObject>();
-		_buttonsByExecutorType
-		.Add(typeof(ICommandExecutor<IAttackCommand>), _attackButton);
-		_buttonsByExecutorType
-		.Add(typeof(ICommandExecutor<IMoveCommand>), _moveButton);
-		_buttonsByExecutorType
-		.Add(typeof(ICommandExecutor<IPatrolCommand>), _patrolButton);
-		_buttonsByExecutorType
-		.Add(typeof(ICommandExecutor<IStopCommand>), _stopButton);
-		_buttonsByExecutorType
-		.Add(typeof(ICommandExecutor<IProduceUnitCommand>), _produceUnitButton);
+		_buttonsByExecutorType.Add(typeof(ICommandExecutor<IAttackCommand>), _attackButton);
+		_buttonsByExecutorType.Add(typeof(ICommandExecutor<IMoveCommand>), _moveButton);
+		_buttonsByExecutorType.Add(typeof(ICommandExecutor<IPatrolCommand>), _patrolButton);
+		_buttonsByExecutorType.Add(typeof(ICommandExecutor<IStopCommand>), _stopButton);
+		_buttonsByExecutorType.Add(typeof(ICommandExecutor<IProduceUnitCommand>), _produceUnitButton);
+		_buttonsByExecutorType.Add(typeof(ICommandExecutor<ISetRallyPointCommand>), _setRallyPointButton);
 	}
 
 	public void BlockInteractions(ICommandExecutor ce)
@@ -47,6 +44,7 @@ public class CommandButtonsView : MonoBehaviour
 		_patrolButton.GetComponent<Selectable>().interactable = value;
 		_stopButton.GetComponent<Selectable>().interactable = value;
 		_produceUnitButton.GetComponent<Selectable>().interactable = value;
+		_setRallyPointButton.GetComponent<Selectable>().interactable = value;
 	}
 
 	public void MakeLayout(IEnumerable<ICommandExecutor> commandExecutors, ICommandsQueue queue)
