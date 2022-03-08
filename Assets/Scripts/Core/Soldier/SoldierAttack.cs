@@ -53,14 +53,14 @@ public class SoldierAttack : CommandExecutorBase<IAttackCommand>
     {
         GetComponent<NavMeshAgent>().isStopped = true;
         GetComponent<NavMeshAgent>().ResetPath();
-        _animator.SetTrigger(Animator.StringToHash(AnimationTypes.Attack));
+        _animator.SetTrigger(AnimationTypes.Attack);
         target.RecieveDamage(GetComponent<IDamageDealer>().Damage);
     }
 
     private void startMovingToPosition(Vector3 position)
     {
         GetComponent<NavMeshAgent>().destination = position;
-        _animator.SetTrigger(Animator.StringToHash(AnimationTypes.Walk));
+        _animator.SetTrigger(AnimationTypes.Walk);
     }
 
     public override async Task ExecuteSpecificCommand(IAttackCommand command)
