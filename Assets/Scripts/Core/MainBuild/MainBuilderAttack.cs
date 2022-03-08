@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System.Threading.Tasks;
+using UnityEngine;
 
 public class MainBuilderAttack : CommandExecutorBase<IAttackCommand>
 {
-    public override void ExecuteSpecificCommand(IAttackCommand command)
+    public override async Task ExecuteSpecificCommand(IAttackCommand command)
     {
         Debug.Log($"This is Attack command to {command.Target}");
     }

@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable, IAttackable
@@ -12,7 +13,8 @@ public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable, IAt
     [SerializeField] private Sprite _icon;
     private float _health;
     private Material _material;
-    private Transform _pivotPoint; 
+    private Transform _pivotPoint;
+    public IUnit _unit;
     public SoldierMain()
     {
         _maxHealth = 500;
@@ -23,6 +25,7 @@ public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable, IAt
     {
         _material = GetComponentInChildren<Renderer>().material;
         _pivotPoint = transform;
+        _unitsParent = _unitsParent ?? GetComponentInParent<Transform>();
     }
 
     public void EnterOutline()
@@ -35,7 +38,7 @@ public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable, IAt
         _material?.SetFloat("_Outline", 0.0f);
     }
 
-    public override void ExecuteSpecificCommand(IAttackCommand command)
+    public override async Task ExecuteSpecificCommand(IAttackCommand command)
     {
         Debug.Log($"This is Attack command to {command.Target}");
     }

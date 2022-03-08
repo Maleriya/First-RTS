@@ -15,12 +15,17 @@ public class UiModelInstaller : MonoInstaller
 		Container.Bind<AttackableValue>().FromInstance(_attackableValue);
 		Container.Bind<SelectableValue>().FromInstance(_selectableValue);
 
+		Container.Bind<float>().WithId("Chrom").FromInstance(5f);
+		Container.Bind<string>().WithId("Chrom").FromInstance("Chrom");
+
 		Container.Bind<CommandCreatorBase<IProduceUnitCommand>>().To<ProduceUnitCommandCommandCreator>().AsTransient();
 		Container.Bind<CommandCreatorBase<IAttackCommand>>().To<AttackCommandCommandCreator>().AsTransient();
 		Container.Bind<CommandCreatorBase<IMoveCommand>>().To<MoveCommandCommandCreator>().AsTransient();
 		Container.Bind<CommandCreatorBase<IPatrolCommand>>().To<PatrolCommandCommandCreator>().AsTransient();
 		Container.Bind<CommandCreatorBase<IStopCommand>>().To<StopCommandCommandCreator>().AsTransient();
+		Container.Bind<CommandCreatorBase<ISetRallyPointCommand>>().To<SetRallyPointCommandCreator>().AsTransient();
 
+		Container.Bind<BottomCenterModel>().AsTransient();
 		Container.Bind<CommandButtonsModel>().AsTransient();
 	}
 }
