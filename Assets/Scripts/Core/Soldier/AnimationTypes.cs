@@ -3,5 +3,6 @@
 public static class AnimationTypes
 {
     public static string Idle = "Idle";
-    public static string Walk = "Walk";  
+    public static string Walk = "Walk";
+    public static string Attack = "Attack";
 }

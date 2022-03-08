@@ -37,4 +37,17 @@ public class MainBuilding : MonoBehaviour, ISelectable, IAttackable
     {
         _material?.SetFloat("_Outline", 0.0f);
     }
+
+    public void RecieveDamage(int amount)
+    {
+        if (_health <= 0)
+        {
+            return;
+        }
+        _health -= amount;
+        if (_health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
