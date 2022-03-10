@@ -4485,6 +4485,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1138751937}
   - component: {fileID: 1138751936}
+  - component: {fileID: 1138751938}
   m_Layer: 0
   m_Name: System
   m_TagString: Untagged
@@ -4504,6 +4505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66751dece0229e14aa859314e8980d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameStatus: {fileID: 1138751938}
 --- !u!4 &1138751937
 Transform:
   m_ObjectHideFlags: 0
@@ -4518,6 +4520,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1138751938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138751935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 072d22bdefc3b094c8909a1af5d4ecc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1148585626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9377,6 +9391,10 @@ PrefabInstance:
     - target: {fileID: 1322125213668101764, guid: 3ebdcbe518e3ef24a98c97aee715395e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1322125213668101885, guid: 3ebdcbe518e3ef24a98c97aee715395e, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -6156735278616557177, guid: 3ebdcbe518e3ef24a98c97aee715395e, type: 3}
