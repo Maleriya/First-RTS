@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable, IAttackable
+public class SoldierMain : MonoBehaviour, ISelectable, IAttackable, IDamageDealer
 {
     public Transform PivotPoint => _pivotPoint;
     public float Health => _health;
@@ -15,6 +15,13 @@ public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable, IAt
     private Material _material;
     private Transform _pivotPoint;
     public IUnit _unit;
+
+    [SerializeField] private Animator _animator;
+    [SerializeField] private SoldierStop _stopCommand;
+
+    public int Damage => _damage;
+    [SerializeField] private int _damage = 25;
+
     public SoldierMain()
     {
         _maxHealth = 500;
@@ -38,8 +45,23 @@ public class SoldierMain : CommandExecutorBase<IAttackCommand>, ISelectable, IAt
         _material?.SetFloat("_Outline", 0.0f);
     }
 
-    public override async Task ExecuteSpecificCommand(IAttackCommand command)
+    public void RecieveDamage(int amount)
     {
-        Debug.Log($"This is Attack command to {command.Target}");
+        if (_health <= 0)
+        {
+            return;
+        }
+        _health -= amount;
+        if (_health <= 0)
+        {
+            _animator.SetTrigger("PlayDead");
+            Invoke(nameof(destroy), 1f);
+        }
+    }
+
+    private async void destroy()
+    {
+        await _stopCommand.ExecuteSpecificCommand(new HoldCommand());
+        Destroy(gameObject);
     }
 }
