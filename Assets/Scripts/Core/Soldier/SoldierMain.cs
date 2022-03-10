@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class SoldierMain : MonoBehaviour, ISelectable, IAttackable, IDamageDealer
+public class SoldierMain : MonoBehaviour, ISelectable, IAttackable, IDamageDealer, IAutomaticAttacker
 {
     public Transform PivotPoint => _pivotPoint;
     public float Health => _health;
@@ -20,7 +20,11 @@ public class SoldierMain : MonoBehaviour, ISelectable, IAttackable, IDamageDeale
     [SerializeField] private SoldierStop _stopCommand;
 
     public int Damage => _damage;
+
     [SerializeField] private int _damage = 25;
+
+    public float VisionRadius => _visionRadius;
+    [SerializeField] private float _visionRadius = 8f;
 
     public SoldierMain()
     {

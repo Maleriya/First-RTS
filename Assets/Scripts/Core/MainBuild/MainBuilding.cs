@@ -18,7 +18,7 @@ public class MainBuilding : MonoBehaviour, ISelectable, IAttackable
     private Transform _pivotPoint;
     public MainBuilding()
     {
-        _maxHealth = 1000;
+        _maxHealth = 25;
         _health = _maxHealth;       
     }
 

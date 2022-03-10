@@ -2307,6 +2307,9 @@ GameObject:
   - component: {fileID: -5651208579055233085}
   - component: {fileID: -6156735278616557177}
   - component: {fileID: 2428570991842315406}
+  - component: {fileID: 2272492265356450467}
+  - component: {fileID: -981042987017936448}
+  - component: {fileID: 1949258876123148337}
   m_Layer: 0
   m_Name: Chomper Variant
   m_TagString: Untagged
@@ -2368,6 +2371,7 @@ MonoBehaviour:
   _animator: {fileID: 1322125212801593598}
   _stopCommand: {fileID: 1322125212801593474}
   _damage: 25
+  _visionRadius: 8
 --- !u!114 &1322125212801593596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2423,8 +2427,8 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_AngularSpeed: 150
+  m_StoppingDistance: 0.5
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -2532,6 +2536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _factionId: 0
+  _isSolder: 1
 --- !u!114 &-6156735278616557177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2556,6 +2561,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 726686e14a19f2148b01d386c059d474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _attackerParallelnfoUpdater: {fileID: -981042987017936448}
+  _factionMemberParallelInfoUpdater: {fileID: 1949258876123148337}
+--- !u!114 &2272492265356450467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322125212801593475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f60370fe97a0964085026d71d99e000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _queue: {fileID: 1322125212801593595}
+--- !u!114 &-981042987017936448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322125212801593475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2be4529e313ff4f48adb717cf83a562e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1949258876123148337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322125212801593475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2325daf3528da9842b5c503026884dfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1322125212808690108
