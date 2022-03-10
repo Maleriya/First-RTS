@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UniRx;
 using Zenject;
+using System.Linq;
 
 public class ChomperCommandsQueue : MonoBehaviour, ICommandsQueue
 {
@@ -10,6 +11,8 @@ public class ChomperCommandsQueue : MonoBehaviour, ICommandsQueue
 	[Inject] CommandExecutorBase<IStopCommand> _stopCommandExecutor;
 
 	private ReactiveCollection<ICommand> _innerCollection = new ReactiveCollection<ICommand>();
+
+	public ICommand CurrentCommand => _innerCollection.Count > 0 ? _innerCollection[0] : default;
 
 	[Inject]
 	private void Init()
@@ -51,6 +54,18 @@ public class ChomperCommandsQueue : MonoBehaviour, ICommandsQueue
 	{
 		var command = wrappedCommand as ICommand;
 		_innerCollection.Add(command);
+	}
+
+	public void EnqueueCommandAutoAttack(object wrappedCommand)
+	{
+		if (_innerCollection.Count() > 1 && _innerCollection.Where(command => command as AutoAttackCommand == null).Any())
+		{
+			Clear();
+			EnqueueCommand(wrappedCommand);
+			return;
+		}
+
+		EnqueueCommand(wrappedCommand);
 	}
 
 	public void Clear()
